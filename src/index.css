@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nexus-amber: #FFAC2F;
+  --color-nexus-deep: #E99519;
+  --color-nexus-black: #050505;
+  --color-nexus-charcoal: #151515;
+  --color-nexus-surface: #1D1D1D;
+  --color-nexus-border: #262626;
+  --color-nexus-border-light: #333333;
+  --color-nexus-warm: #FAFAF8;
+  --color-nexus-white: #FFFFFF;
+  --color-nexus-muted: #888888;
+  --color-nexus-subtle: #A0A0A0;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --shadow-amber-glow: 0 0 25px -5px rgba(255, 172, 47, 0.25);
+  --shadow-amber-glow-lg: 0 0 45px -8px rgba(255, 172, 47, 0.35);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #050505;
+  color: #FAFAF8;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFAC2F;
+}
+
+/* Code & token badge styling */
+.token-badge {
+  font-family: var(--font-mono);
+  background-color: #151515;
+  border: 1px solid #262626;
+  color: #FAFAF8;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+  display: inline-block;
+  letter-spacing: -0.01em;
+}
+
+.token-badge-amber {
+  font-family: var(--font-mono);
+  background-color: rgba(255, 172, 47, 0.12);
+  border: 1px solid rgba(255, 172, 47, 0.35);
+  color: #FFAC2F;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+/* Subtle architectural grid pattern background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
