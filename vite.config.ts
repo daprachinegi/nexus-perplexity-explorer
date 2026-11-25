@@ -7,9 +7,6 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  optimizeDeps: {
-    exclude: ['@huggingface/transformers']
-  },
   server: {
     port: 5173,
     host: true

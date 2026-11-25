@@ -17,18 +17,7 @@ async function getTransformersLib() {
     return { AutoTokenizer: null, AutoModelForCausalLM: null, Tensor: TensorClass };
   }
 
-  // First try the installed npm package
-  try {
-    const tf = await import('@huggingface/transformers');
-    if (tf && tf.AutoTokenizer && tf.AutoModelForCausalLM && tf.Tensor) {
-      TensorClass = tf.Tensor;
-      return tf;
-    }
-  } catch (err) {
-    console.warn('Bundled @huggingface/transformers load error, attempting CDN fallback...', err);
-  }
-
-  // CDN ESM fallback (identical to reference site)
+  // Load browser-compatible Transformers.js from CDN (identical to reference site)
   try {
     // @ts-ignore
     const cdnUrl = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3';
@@ -36,9 +25,9 @@ async function getTransformersLib() {
     const tf = await import(/* @vite-ignore */ cdnUrl);
     TensorClass = tf.Tensor;
     return tf;
-  } catch (err2) {
-    console.error('Failed to load Transformers.js from both local and CDN:', err2);
-    throw new Error('Could not load browser model runtime. Check your internet connection.');
+  } catch (err) {
+    console.error('Failed to load Transformers.js from CDN:', err);
+    throw new Error('Could not load browser neural runtime. Check your internet connection.');
   }
 }
 
