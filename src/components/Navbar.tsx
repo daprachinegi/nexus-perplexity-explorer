@@ -46,11 +46,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, modelStatus, stat
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`px-3 py-1.5 text-xs font-mono uppercase tracking-wider transition-all duration-150 rounded ${
-                  isActive
-                    ? 'text-nexus-amber bg-nexus-amber/10 border border-nexus-amber/30'
-                    : 'text-nexus-muted hover:text-nexus-warm hover:bg-nexus-surface/50 border border-transparent'
-                }`}
+                className={`px-3 py-1.5 text-xs font-mono uppercase tracking-wider transition-all duration-150 rounded ${isActive
+                  ? 'text-nexus-amber bg-nexus-amber/10 border border-nexus-amber/30'
+                  : 'text-nexus-muted hover:text-nexus-warm hover:bg-nexus-surface/50 border border-transparent'
+                  }`}
               >
                 {item.label}
               </button>
